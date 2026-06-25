@@ -1,0 +1,1 @@
+Small example package for a 42 project !
