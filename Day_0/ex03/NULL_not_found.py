@@ -6,7 +6,7 @@ def NULL_not_found(object):
     elif object != object:
         print(f"Cheese: nan <class '{type(object).__name__}'>")
         return None
-    elif object == 0:
+    elif object == 0 and type(object) is int:
         print(f"Zero: 0 <class '{type(object).__name__}'>")
         return None
     elif object == '':

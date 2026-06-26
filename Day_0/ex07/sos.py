@@ -69,7 +69,8 @@ NESTED_MORSE = {
 
 def is_valid_string(text, dictionary):
     """
-    Return True if all characters of text are keys in morse_dict."
+    Return True if all characters of text are keys in morse_dict.
+
     Args:
         text (str): string to check
         dictionary (dict): dictionary to check against
@@ -82,7 +83,8 @@ def is_valid_string(text, dictionary):
 def convert_to_morse(text, dictionary):
     """
     Returns the conversion of the text passed in parameter as the values in\
-        the dictionary
+the dictionary
+
     Args:
         text (str): string to convert
         dictionary (dict): dictionary to use for conversion
@@ -92,13 +94,14 @@ def convert_to_morse(text, dictionary):
         str: the converted string
     """
     if not is_valid_string(text, dictionary):
-        raise ValueError("The arguments are bad")
+        raise ValueError("AssertionError: The arguments are bad")
     return "".join(dictionary.get(char, char) for char in text)
 
 
 def main():
     """
     Convert the command-line argument to Morse and print it.
+
     Args:
         sys.argv[1]: string to convert to Morse code
     Raises:
@@ -108,10 +111,10 @@ def main():
     """
     try:
         if len(sys.argv) != 2:
-            raise AssertionError("the arguments are bad")
+            raise AssertionError("AssertionError: the arguments are bad")
         string = sys.argv[1]
         output = convert_to_morse(string, NESTED_MORSE)
-        print(output)
+        print(output[:-1])
     except Exception as err:
         print(err)
         return 1

@@ -15,7 +15,9 @@ def building(text: str):
     """
 
     if text is None:
-        text = input("What is the text to count?\n")
+        print("What is the text to count?")
+        text = sys.stdin.readline()
+
     if not isinstance(text, str):
         raise TypeError("TypeError: text must be a string")
 
@@ -23,14 +25,14 @@ def building(text: str):
     for char in text:
         if char.isupper():
             upper += 1
-        if char.islower():
+        elif char.islower():
             lower += 1
-        if char.isspace():
-            spaces += 1
-        if char.isdigit():
+        elif char.isdigit():
             digits += 1
-        else:
+        elif char in ".,;:!?":
             punctuation += 1
+        elif char.isspace():
+            spaces += 1
 
     total = upper + lower + digits + spaces + punctuation
     print(f"The text contains {total} characters:")
@@ -44,6 +46,7 @@ def building(text: str):
 def main():
     """
     Validates input arguments and calls the building function.
+
     Args:
         sys.argv[1]: string to count characters in
     Raises:
@@ -51,17 +54,15 @@ def main():
     Returns:
         int: exit code (0 for success, 1 for error)
     """
+
     try:
         if len(sys.argv) > 2:
             raise AssertionError("AssertionError: more than one argument is\
-                                provided")
+provided")
         elif len(sys.argv) == 1:
             building(None)
         else:
             building(sys.argv[1])
-    except AssertionError as err:
-        print(err)
-        return 1
     except Exception as err:
         print(err)
         return 1
