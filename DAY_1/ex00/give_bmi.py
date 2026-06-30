@@ -9,13 +9,13 @@ def give_bmi(height: list[int | float],
         height: List of heights in meters
         weight: List of weights in kilograms
 
-    Returns:
-        List of BMI values (weight / height²)
-
     Raises:
         TypeError: If height or weight values are not int or float
         ValueError: If lists have different lengths or contain non-positive
          values
+
+    Returns:
+        List of BMI values (weight / height²)
     """
     if any(type(h) not in (int, float)
            for h in height):
@@ -44,11 +44,11 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
         bmi: List of BMI values
         limit: The threshold to compare against
 
-    Returns:
-        List of booleans indicating if each BMI exceeds the limit
-
     Raises:
         TypeError: If limit is not an int or bmi contains non-numeric values
+
+    Returns:
+        List of booleans indicating if each BMI exceeds the limit
     """
     if type(limit) is not int:
         raise TypeError("Limit value must be int")

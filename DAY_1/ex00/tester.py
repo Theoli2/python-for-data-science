@@ -35,37 +35,37 @@ print(f"Over limit 20: {apply_limit(bmi4, 20)}")
 # Test case 5: Error - mismatched lengths
 print("\n--- Test case 5: Mismatched lengths ---")
 try:
-	give_bmi([1.80, 1.75], [70])
+    give_bmi([1.80, 1.75], [70])
 except ValueError as e:
-	print(f"Error caught: {e}")
+    print(f"Error caught: {e}")
 
 # Test case 6: Error - invalid type
 print("\n--- Test case 6: Invalid type (string) ---")
 try:
-	give_bmi(["1.80"], [70])
+    give_bmi(["1.80"], [70])
 except TypeError as e:
-	print(f"Error caught: {e}")
+    print(f"Error caught: {e}")
 
 # Test case 7: Error - negative value
 print("\n--- Test case 7: Negative height ---")
 try:
-	give_bmi([-1.80], [70])
+    give_bmi([-1.80], [70])
 except ValueError as e:
-	print(f"Error caught: {e}")
+    print(f"Error caught: {e}")
 
 # Test case 8: Error - zero value
 print("\n--- Test case 8: Zero weight ---")
 try:
-	give_bmi([1.80], [0])
+    give_bmi([1.80], [0])
 except ValueError as e:
-	print(f"Error caught: {e}")
+    print(f"Error caught: {e}")
 
 # Test case 9: Error - boolean (edge case)
 print("\n--- Test case 9: Boolean value ---")
 try:
-	give_bmi([True], [70])
+    give_bmi([True], [70])
 except TypeError as e:
-	print(f"Error caught: {e}")
+    print(f"Error caught: {e}")
 
 # Test case 10: apply_limit with valid int limit
 print("\n--- Test case 10: apply_limit valid int ---")
@@ -77,34 +77,34 @@ print(f"Over limit 25: {result10}")
 # Test case 11: apply_limit with float limit (should fail)
 print("\n--- Test case 11: apply_limit with float limit ---")
 try:
-	apply_limit([22.5, 28.0], 25.5)
+    apply_limit([22.5, 28.0], 25.5)
 except TypeError as e:
-	print(f"Error caught: {e}")
+    print(f"Error caught: {e}")
 
 # Test case 12: apply_limit with string limit (should fail)
 print("\n--- Test case 12: apply_limit with string limit ---")
 try:
-	apply_limit([22.5, 28.0], "25")
+    apply_limit([22.5, 28.0], "25")
 except TypeError as e:
-	print(f"Error caught: {e}")
+    print(f"Error caught: {e}")
 
 # Test case 13: apply_limit with boolean limit (should fail)
 print("\n--- Test case 13: apply_limit with boolean limit ---")
 try:
-	apply_limit([22.5, 28.0], True)
+    apply_limit([22.5, 28.0], True)
 except TypeError as e:
-	print(f"Error caught: {e}")
+    print(f"Error caught: {e}")
 
 # Test case 14: apply_limit with invalid bmi values
 print("\n--- Test case 14: apply_limit with string in bmi list ---")
 try:
-	apply_limit([22.5, "28.0"], 25)
+    apply_limit([22.5, "28.0"], 25)
 except TypeError as e:
-	print(f"Error caught: {e}")
+    print(f"Error caught: {e}")
 
 # Test case 15: apply_limit with all boolean values in bmi
 print("\n--- Test case 15: apply_limit with boolean in bmi list ---")
 try:
-	apply_limit([True, False], 1)
+    apply_limit([True, False], 1)
 except TypeError as e:
-	print(f"Error caught: {e}")
+    print(f"Error caught: {e}")
